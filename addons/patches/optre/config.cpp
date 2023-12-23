@@ -3,6 +3,7 @@
 #include "CfgAmmo.inc"
 #include "CfgVehicles.inc"
 #include "CfgFunctions.inc"
+#include "CfgWeapons.inc"
 
 class CfgPatches
 {
@@ -24,7 +25,8 @@ class CfgPatches
             "OPTRE_Vehicles_Warthog_RC",
             "OPTRE_Vehicles_Sabre",
             "OPTRE_Vehicles_Wombat",
-            "OPTRE_Vehicles_Air_Falcon" };
+            "OPTRE_Vehicles_Air_Falcon",
+            "OPTRE_Weapons" };
         skipWhenMissingDependencies = 1;
         VERSION_CONFIG;
 
