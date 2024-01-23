@@ -318,7 +318,6 @@ All Options: https://github.com/Belhun/Armco-Halo-Mod/wiki/Armour-Breakdown-With
 
 #define VEST_SELECTIONS_LEAD  \
   VEST_SELECTIONS_BASE        \
-  , "A_Ghillie"               \
   , "A_KneesLeft"             \
   , "A_KneesRight"            \
   , "AP_AR"                   \
