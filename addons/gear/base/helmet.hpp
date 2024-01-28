@@ -12,10 +12,10 @@
   "H_VacCollar",                 \
   "H_Neck"
 
-class SWS_Helmet_Base : SWS_Helmet_OPTRE_UNSC_CH252D_Helmet_Base
+class SWS_Helmet_Legacy_Base : SWS_Helmet_OPTRE_UNSC_CH252D_Helmet_Base
 {
-  ITEM_META(1);
-  descriptionShort = "Armor Level: ODST";
+  ITEM_META(0);
+  descriptionShort = "Project: SCARLET Experimental Protective Headgear<br>Model: CH252D-Sx";
   hiddenSelectionsMaterials[] = {MATERIAL(odsthud)};
 
   hiddenSelectionsTextures[] = {
@@ -31,7 +31,7 @@ class SWS_Helmet_Base : SWS_Helmet_OPTRE_UNSC_CH252D_Helmet_Base
   };
 };
 
-class SWS_Helmet_Base_dp : SWS_Helmet_Base
+class SWS_Helmet_Legacy_Base_dp : SWS_Helmet_Legacy_Base
 {
   ace_arsenal_hide = 1;
   model = "\OPTRE_UNSC_Units\Army\odst_helmet_dp.p3d";
@@ -52,7 +52,7 @@ class SWS_Helmet_Base_dp : SWS_Helmet_Base
 };
 
 #define C_HELMET_BASE(varName,texHelmet,texRest)                        \
-  class DOUBLES(SWS_Helmet,varName): SWS_Helmet_Base                                    \
+  class DOUBLES(SWS_Helmet,varName): SWS_Helmet_Legacy_Base                                    \
   {                                                                                     \
       ITEM_META(2);                                                                     \
       displayName = QNAME(Helmet (varName));                                            \
@@ -62,7 +62,7 @@ class SWS_Helmet_Base_dp : SWS_Helmet_Base
           hiddenSelectionsTextures[] = {ARR_2(texHelmet,texRest)};                      \
       };                                                                                \
   };                                                                                    \
-  class TRIPLES(SWS_Helmet,varName,dp) : SWS_Helmet_Base_dp                             \
+  class TRIPLES(SWS_Helmet,varName,dp) : SWS_Helmet_Legacy_Base_dp                             \
   {                                                                                     \
     ITEM_META(1);                                                                       \
     displayName = QNAME(Helmet (varName));                                              \
