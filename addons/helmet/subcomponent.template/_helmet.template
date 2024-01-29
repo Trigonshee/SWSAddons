@@ -1,0 +1,97 @@
+class SWS_Helmet_<%= TEMPLATE_DATA.className %> : SWS_Helmet_Base
+{
+  SCOPE(2);
+  displayName = QNAME(<%= TEMPLATE_DATA.displayName %>);
+  hiddenSelections[] = {
+    "camo"
+    , "camo2"
+    , "camo3"
+    , "camo4"
+    <%= if !TEMPLATE_DATA.withGhillie { ", \"H_Ghillie\""; }; %>
+    <%= if !TEMPLATE_DATA.withVacCollar { ", \"H_VacCollar\", \"H_Neck\""; }; %>
+  };
+  hiddenSelectionsMaterials[] = {
+    QPATHTOF(data\helmet.rvmat)
+    , QPATHTOF(data\visor.rvmat)
+    , MAT_A3_GHILLIE
+    , QPATHTOF(data\softpacks.rvmat)
+  };
+  hiddenSelectionsTextures[] = {
+    "<%= TEMPLATE_DATA.textures.base %>"
+    , "<%= TEMPLATE_DATA.textures.visor ?? "QPATHTOF(data\\visor_g_blue_co.paa)" %>"
+    , TEX_OPTRE_GHILLIE_WOODLAND
+    , "<%= TEMPLATE_DATA.textures.softPacks ?? "QPATHTOF(data\\softpacks_co.paa)" %>"
+  };
+
+  class ItemInfo : ItemInfo
+  {
+    hiddenSelections[] = {
+      "camo"
+      , "camo2"
+      , "camo3"
+      , "camo4"
+      <%= if !TEMPLATE_DATA.withGhillie { ", \"H_Ghillie\""; }; %>
+      <%= if !TEMPLATE_DATA.withVacCollar { ", \"H_VacCollar\", \"H_Neck\""; }; %>
+    };
+    hiddenSelectionsMaterials[] = {
+      QPATHTOF(data\helmet.rvmat)
+      , QPATHTOF(data\visor.rvmat)
+      , MAT_A3_GHILLIE
+      , QPATHTOF(data\softpacks.rvmat)
+    };
+    hiddenSelectionsTextures[] = {
+      "<%= TEMPLATE_DATA.textures.base %>"
+      , "<%= TEMPLATE_DATA.textures.visor ?? "QPATHTOF(data\\visor_g_blue_co.paa)" %>"
+      , TEX_OPTRE_GHILLIE_WOODLAND
+      , "<%= TEMPLATE_DATA.textures.softPacks ?? "QPATHTOF(data\\softpacks_co.paa)" %>"
+    };
+  };
+};
+
+class SWS_Helmet_<%= TEMPLATE_DATA.className %>_dp : SWS_Helmet_<%= TEMPLATE_DATA.className %>
+{
+  SCOPE(1);
+  model = MODEL_DP;
+  ace_arsenal_uniqueBase = "SWS_Helmet_<%= TEMPLATE_DATA.className %>";
+  ace_arsenal_hide = TRUE;
+
+  hiddenSelections[] = {
+    "camo"
+    , "camo2"
+    , "H_Ghillie"
+    , "camo4"
+    <%= if !TEMPLATE_DATA.withGhillie { ", \"H_Ghillie\""; }; %>
+    <%= if !TEMPLATE_DATA.withVacCollar { ", \"H_VacCollar\", \"H_Neck\""; }; %>
+  };
+  hiddenSelectionsMaterials[] = {
+    QPATHTOF(data\helmet.rvmat)
+    , QPATHTOF(data\visor_trans.rvmat)
+    , MAT_A3_GHILLIE
+    , QPATHTOF(data\softpacks.rvmat)
+  };
+  hiddenSelectionsTextures[] = {
+    "<%= TEMPLATE_DATA.textures.base %>"
+    , "<%= TEMPLATE_DATA.textures.visorDepolarized ?? "QPATHTOF(data\\visor_clear_ca.paa)" %>"
+    , TEX_OPTRE_GHILLIE_WOODLAND
+    , "<%= TEMPLATE_DATA.textures.softPacks ?? "QPATHTOF(data\\softpacks_co.paa)" %>"
+  };
+
+  class ItemInfo : ItemInfo
+  {
+    uniformModel = MODEL_DP;
+    hiddenSelections[] = {
+      "camo"
+      , "camo2"
+      , "H_Ghillie"
+      , "camo4"
+      <%= if !TEMPLATE_DATA.withGhillie { ", \"H_Ghillie\""; }; %>
+      <%= if !TEMPLATE_DATA.withVacCollar { ", \"H_VacCollar\", \"H_Neck\""; }; %>
+    };
+    hiddenSelectionsTextures[] = {
+      "<%= TEMPLATE_DATA.textures.base %>"
+      , "<%= TEMPLATE_DATA.textures.visorDepolarized ?? "QPATHTOF(data\\visor_clear_ca.paa)" %>"
+      , TEX_OPTRE_GHILLIE_WOODLAND
+      , "<%= TEMPLATE_DATA.textures.softPacks ?? "QPATHTOF(data\\softpacks_co.paa)" %>"
+    };
+  };
+};

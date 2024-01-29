@@ -1,0 +1,3 @@
+#define SUBCOMPONENT <%= TEMPLATE_DATA.subcomponent %>
+#define SUBCOMPONENT_BEAUTIFIED <%= TEMPLATE_DATA.subcomponentBeautified %>
+#include "..\script_component.hpp"
