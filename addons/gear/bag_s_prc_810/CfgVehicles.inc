@@ -1,8 +1,10 @@
-#define CLASSES_VEHICLES        \
-  "SWS_V_Bag_S_PRC_810"         \
-  , "SWS_V_Bag_S_PRC_810_RTO"   \
-  , "SWS_V_Bag_S_PRC_810_Hard"  \
-  , "SWS_V_Bag_S_PRC_810_Hard_RTO"
+#define CLASSES_VEHICLES            \
+  "SWS_V_Bag_S_PRC_810"             \
+  , "SWS_V_Bag_S_PRC_810_RTO"       \
+  , "SWS_V_Bag_S_PRC_810_Hard"      \
+  , "SWS_V_Bag_S_PRC_810_Hard_RTO"  \
+  , "SWS_V_Bag_S_PRC_810_Hound"     \
+  , "SWS_V_Bag_S_PRC_810_RTO_Hound"
 
 // Hardshell case
 #define HS_BAG_HARD "camo"
@@ -55,6 +57,8 @@ class CfgVehicles
     class XtdGearInfo
     {
       model = "SWS_Bag_LR";
+      variant = "Standard";
+      customization = "None";
     };
   };
 
@@ -63,7 +67,6 @@ class CfgVehicles
     SCOPE(2);
     displayName = QNAME(S/PRC-810);
     hiddenSelections[] = {HS_BASE, HS_VAR_SOFT, HS_MEDICAL};
-    class XtdGearInfo : XtdGearInfo { variant = "Standard"; };
   };
   class SWS_V_Bag_S_PRC_810_RTO : SWS_V_Bag_S_PRC_810_Base
   {
@@ -72,6 +75,27 @@ class CfgVehicles
     hiddenSelections[] = {HS_BASE, HS_VAR_SOFT};
     class XtdGearInfo : XtdGearInfo { variant = "RTO"; };
   };
+
+  //--- Hound's customized pack
+  #define HS_TEXTURES                                       \
+    QPATHTOF(data\bag_s_prc_810\bag_hard_co.paa)            \
+    , QPATHTOF(data\bag_s_prc_810\bag_soft_medical_co.paa)  \
+    , QPATHTOF(data\bag_s_prc_810\radio_co.paa)             \
+    , QPATHTOF(data\bag_s_prc_810\biofoam_co.paa)
+  class SWS_V_Bag_S_PRC_810_Hound : SWS_V_Bag_S_PRC_810
+  {
+    displayName = QNAME(Hound's S/PRC-810);
+    hiddenSelectionsTextures[] = {HS_TEXTURES};
+    class XtdGearInfo : XtdGearInfo { customization = "Hound"; };
+  };
+
+  class SWS_V_Bag_S_PRC_810_RTO_Hound : SWS_V_Bag_S_PRC_810_RTO
+  {
+    displayName = QNAME(Hound's S/PRC-810 - RTO);
+    hiddenSelectionsTextures[] = {HS_TEXTURES};
+    class XtdGearInfo : XtdGearInfo { customization = "Hound"; };
+  };
+  #undef HS_TEXTURES
 };
 
 #undef HS_BAG_HARD
