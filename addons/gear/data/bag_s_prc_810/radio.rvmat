@@ -1,11 +1,11 @@
-ambient[] = { 1, 1, 1, 1 };
-diffuse[] = { 1, 1, 1, 1 };
-forcedDiffuse[] = { 0, 0, 0, 1 };
-emmisive[] = { 0, 0, 0, 1 };
-specular[] = { 0.3, 0.3, 0.3, 1 };
-specularPower = 32;
-PixelShaderID = "Super";
-VertexShaderID = "Super";
+ambient[] = {1,1,1,1};
+diffuse[] = {0.5,0.5,0.5,1};
+forcedDiffuse[] = {0,0,0,0};
+emmisive[] = {0,0,0,1};
+specular[] = {0.5,0.5,0.5,1};
+specularPower = 25;
+pixelShaderID = "Super";
+vertexShaderID = "Super";
 class Stage1 {
 	texture = "x\sws\addons\gear\data\bag_s_prc_810\radio_nohq.paa";
 	uvSource = "tex";
@@ -17,7 +17,7 @@ class Stage1 {
 	};
 };
 class Stage2 {
-	texture = "#(argb,8,8,3)color(0.5,0.5,0.5,1,dt)";
+	texture = "#(argb,8,8,3)color(0.5,0.5,0.5,1,DT)";
 	uvSource = "tex";
 	class uvTransform {
 		aside[] = { 1, 1, 0 };
@@ -26,14 +26,16 @@ class Stage2 {
 		pos[] = { 0, 0, 0 };
 	};
 };
-class Stage3 {
-	texture = "#(argb,8,8,3)color(0,0,0,0,mc)";
+class Stage3
+{
+	texture = "#(argb,8,8,3)color(0,0,0,0,MC)";
 	uvSource = "tex";
-	class uvTransform {
-		aside[] = { 1, 0, 0 };
-		up[] = { 0, 1, 0 };
-		dir[] = { 0, 0, 0 };
-		pos[] = { 0, 0, 0 };
+	class uvTransform
+	{
+		aside[] = {1,0,0};
+		up[] = {0,1,0};
+		dir[] = {0,0,0};
+		pos[] = {0,0,0};
 	};
 };
 class Stage4 {
@@ -56,14 +58,16 @@ class Stage5 {
 		pos[] = { 0, 0, 0 };
 	};
 };
-class Stage6 {
-	texture = "#(ai,64,64,1)fresnel(2.41,1.2)";
+class Stage6
+{
+	texture = "#(ai,64,64,1)fresnel(1,0.7)";
 	uvSource = "tex";
-	class uvTransform {
-		aside[] = { 1, 0, 0 };
-		up[] = { 0, 1, 0 };
-		dir[] = { 0, 0, 1 };
-		pos[] = { 0, 0, 0 };
+	class uvTransform
+	{
+		aside[] = {1,0,0};
+		up[] = {0,1,0};
+		dir[] = {0,0,1};
+		pos[] = {0,0,0};
 	};
 };
 class Stage7 {
@@ -77,6 +81,7 @@ class Stage7 {
 		pos[] = { 0, 0, 0 };
 	};
 };
-class StageTI {
-  texture = "#(argb,8,8,3)color(0,0,0,0)";
+class StageTI
+{
+	texture = "#(argb,8,8,3)color(0,0,0,0)";
 };
