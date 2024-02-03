@@ -51,6 +51,11 @@ class CfgVehicles
       , QPATHTOF(data\bag_s_prc_810\radio_co.paa)
       , QPATHTOF(data\bag_s_prc_810\biofoam_co.paa)
     };
+
+    class XtdGearInfo
+    {
+      model = "SWS_Bag_LR";
+    };
   };
 
   class SWS_V_Bag_S_PRC_810 : SWS_V_Bag_S_PRC_810_Base
@@ -58,12 +63,14 @@ class CfgVehicles
     SCOPE(2);
     displayName = QNAME(S/PRC-810);
     hiddenSelections[] = {HS_BASE, HS_VAR_SOFT, HS_MEDICAL};
+    class XtdGearInfo : XtdGearInfo { variant = "Standard"; };
   };
   class SWS_V_Bag_S_PRC_810_RTO : SWS_V_Bag_S_PRC_810_Base
   {
     SCOPE(2);
     displayName = QNAME(S/PRC-810 - RTO);
     hiddenSelections[] = {HS_BASE, HS_VAR_SOFT};
+    class XtdGearInfo : XtdGearInfo { variant = "RTO"; };
   };
 };
 
